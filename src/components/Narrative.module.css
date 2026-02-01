@@ -1,0 +1,58 @@
+.container {
+    position: relative;
+    background: var(--color-bg-dark);
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    /* Above background */
+    z-index: 10;
+}
+
+.phraseGroup {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.heading {
+    color: var(--color-sand);
+    margin-bottom: 1.5rem;
+    font-size: 3rem;
+    /* Fallback */
+}
+
+.text {
+    font-family: var(--font-sans);
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    max-width: 600px;
+}
+
+.fixedBackground {
+    position: absolute;
+    /* Not fixed to container for Scrolly feel within section? Or fixed on screen? */
+    /* Usually scrollytelling has sticky background. I'll make it absolute for now to be simple */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(140, 58, 58, 0.05), transparent 60%);
+}
