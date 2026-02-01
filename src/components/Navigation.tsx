@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import Logo from './Logo';
 import styles from './Navigation.module.css';
 
 export default function Navigation() {
@@ -34,7 +35,7 @@ export default function Navigation() {
         <>
             <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
                 <div className={styles.container}>
-                    <div className={styles.logo}>iPicnix</div>
+                    <Logo variant="header" />
 
                     {/* Desktop Navigation */}
                     <div className={styles.desktopLinks}>

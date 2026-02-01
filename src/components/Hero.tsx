@@ -1,3 +1,4 @@
+import Logo from './Logo';
 import styles from './Hero.module.css';
 
 export default function Hero() {
@@ -26,7 +27,7 @@ export default function Hero() {
                 </div>
 
                 <div className={styles.logoWrapper}>
-                    <img src="/logo.png" alt="iPicnix Signature" className={styles.logoMark} />
+                    <Logo variant="hero" />
                 </div>
             </div>
 
