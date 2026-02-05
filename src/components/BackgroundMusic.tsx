@@ -20,25 +20,61 @@ export default function BackgroundMusic() {
         if (audioRef.current) {
             audioRef.current.volume = 0.15; // Low volume 10-20%
         }
+
+        const playAudio = async () => {
+            if (audioRef.current && !isBookNow) {
+                try {
+                    await audioRef.current.play();
+                    setIsPlaying(true);
+                    setUserHasInteracted(true);
+                } catch (err) {
+                    console.log("Autoplay blocked by browser. Waiting for interaction.");
+                    setIsPlaying(false);
+                }
+            }
+        };
+
+        playAudio();
+
+        // Fallback: If autoplay is blocked, play on first interaction
+        const handleInteraction = () => {
+            if (audioRef.current && audioRef.current.paused && !isBookNow) {
+                audioRef.current.play().catch(e => console.error("Play failed:", e));
+                setIsPlaying(true);
+                setUserHasInteracted(true);
+            }
+            // Remove listeners after first interaction attempt
+            window.removeEventListener('click', handleInteraction);
+            window.removeEventListener('keydown', handleInteraction);
+            window.removeEventListener('touchstart', handleInteraction);
+        };
+
+        window.addEventListener('click', handleInteraction);
+        window.addEventListener('keydown', handleInteraction);
+        window.addEventListener('touchstart', handleInteraction);
+
+        return () => {
+            window.removeEventListener('click', handleInteraction);
+            window.removeEventListener('keydown', handleInteraction);
+            window.removeEventListener('touchstart', handleInteraction);
+        };
     }, []);
 
     // Handle route changes
     useEffect(() => {
         if (audioRef.current) {
             if (isBookNow) {
-                // Determine if we should pause
                 audioRef.current.pause();
-                // We keep isPlaying state as is technically, or visual indicator should show "muted/disabled"?
-                // If we want to resume automatically when leaving book-now IF it was playing, we need to track "userIntentPlaying".
-                // For simplicity, if we go to disabled page, we pause. 
-                // If we go back, user might need to press play? 
-                // Prompt says: "If user pauses, keep it paused". "Persist play/pause state across navigation if feasible".
-                // If the SYSTEM pauses it because of route, we should probably resume it if valid.
-            } else if (isPlaying && userHasInteracted) {
+                // We don't change isPlaying to false here visually if we want it to 'resume' when they leave? 
+                // But let's keep visual sync: if we pause, we pause.
+                setIsPlaying(false);
+            } else if (userHasInteracted) {
+                // Resume if we have interacted before
                 audioRef.current.play().catch(e => console.log("Playback failed", e));
+                setIsPlaying(true);
             }
         }
-    }, [pathname, isBookNow, isPlaying, userHasInteracted]);
+    }, [pathname, isBookNow, userHasInteracted]);
 
     const togglePlay = () => {
         if (!audioRef.current) return;
@@ -71,6 +107,7 @@ export default function BackgroundMusic() {
                 ref={audioRef}
                 src="/audio/ipicnix-ambient.mp3"
                 loop
+                autoPlay
                 preload="auto"
             />
             <button
