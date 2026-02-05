@@ -8,6 +8,29 @@
 
   --font-serif: 'Cormorant Garamond', serif;
   --font-sans: 'Montserrat', sans-serif;
+
+  /* Layout Variables */
+  --header-height: 90px;
+  --container-width: 1400px;
+
+  /* Color Palette */
+  --color-sand: #D4AF37;
+  --color-mustard: #C5A028;
+  --color-taupe: #8b8b8b;
+  --color-bg-dark: #0a0a0a;
+  --color-bg-dark-soft: #111111;
+  --color-text-muted: rgba(255, 255, 255, 0.7);
+
+  /* Glassmorphism */
+  --glass-bg: rgba(10, 10, 10, 0.7);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+  --backdrop-blur: blur(12px);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: 70px;
+  }
 }
 
 * {
