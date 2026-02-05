@@ -1,0 +1,19 @@
+.section {
+    padding: 8rem 2rem;
+    background-color: var(--background);
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.text {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--foreground);
+    opacity: 0.9;
+    margin-top: 2rem;
+    font-weight: 300;
+}

@@ -21,9 +21,12 @@ export default function Hero() {
             <div className={styles.content}>
                 <div className={styles.headlineWrapper}>
                     <h1 className={styles.headline}>
-                        Step into a world <br />
-                        <span className={styles.italic}>curated exclusively for you</span>
+                        Luxury Room Decorations
                     </h1>
+                    <p className={styles.subheadline}>
+                        Luxury room styling & intimate experiences
+                    </p>
+                    <a href="/book-now" className={styles.ctaButton}>Book Now</a>
                 </div>
 
                 <div className={styles.logoWrapper}>

@@ -125,3 +125,37 @@
         height: 60px;
     }
 }
+
+.subheadline {
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 1rem;
+    letter-spacing: 0.05em;
+    opacity: 0;
+    animation: fadeUp 1.5s ease forwards 1s;
+}
+
+.ctaButton {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeUp 1.5s ease forwards 1.2s;
+    text-decoration: none;
+}
+
+.ctaButton:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}

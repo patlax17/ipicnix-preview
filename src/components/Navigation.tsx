@@ -39,15 +39,15 @@ export default function Navigation() {
 
                     {/* Desktop Navigation */}
                     <div className={styles.desktopLinks}>
-                        <a href="#narrative" className={styles.link}>The Journey</a>
-                        <a href="#gallery" className={styles.link}>Moments</a>
-                        <a href="#collections" className={styles.link}>Collections</a>
-                        <a href="#concierge" className={styles.ctaButton}>Concierge</a>
+                        <a href="/#narrative" className={styles.link}>The Journey</a>
+                        <a href="/#gallery" className={styles.link}>Moments</a>
+                        <a href="/#collections" className={styles.link}>Collections</a>
+                        <a href="/#concierge" className={styles.ctaButton}>Concierge</a>
                     </div>
 
                     {/* Mobile: Concierge Button + Hamburger */}
                     <div className={styles.mobileControls}>
-                        <a href="#concierge" className={styles.mobileCtaButton}>Concierge</a>
+                        <a href="/#concierge" className={styles.mobileCtaButton}>Concierge</a>
                         <button
                             className={styles.hamburger}
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -72,16 +72,16 @@ export default function Navigation() {
                     <span className={styles.closeLine}></span>
                 </button>
                 <div className={styles.mobileMenuContent}>
-                    <a href="#narrative" className={styles.mobileLink} onClick={handleLinkClick}>
+                    <a href="/#narrative" className={styles.mobileLink} onClick={handleLinkClick}>
                         The Journey
                     </a>
-                    <a href="#gallery" className={styles.mobileLink} onClick={handleLinkClick}>
+                    <a href="/#gallery" className={styles.mobileLink} onClick={handleLinkClick}>
                         Moments
                     </a>
-                    <a href="#collections" className={styles.mobileLink} onClick={handleLinkClick}>
+                    <a href="/#collections" className={styles.mobileLink} onClick={handleLinkClick}>
                         Collections
                     </a>
-                    <a href="#concierge" className={styles.mobileLink} onClick={handleLinkClick}>
+                    <a href="/#concierge" className={styles.mobileLink} onClick={handleLinkClick}>
                         Concierge
                     </a>
                 </div>

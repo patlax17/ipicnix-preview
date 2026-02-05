@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
+import Introduction from "@/components/Introduction";
 import Narrative from "@/components/Narrative";
 import Gallery from "@/components/Gallery";
 import WallOfLove from "@/components/WallOfLove";
@@ -11,6 +12,7 @@ export default function Home() {
     <>
       <Navigation />
       <Hero />
+      <Introduction />
       <Narrative />
       <Gallery />
       <WallOfLove />

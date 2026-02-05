@@ -1,0 +1,45 @@
+.footer {
+    background-color: var(--background);
+    color: var(--foreground);
+    padding: 4rem 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+}
+
+.brand {
+    font-family: var(--font-fancy), serif;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.tagline {
+    font-size: 1rem;
+    opacity: 0.8;
+    max-width: 400px;
+    line-height: 1.6;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.copyright {
+    margin-top: 2rem;
+    font-size: 0.75rem;
+    opacity: 0.4;
+}
