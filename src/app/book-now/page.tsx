@@ -17,22 +17,20 @@ export default function BookNowPage() {
 
                 <div style={{
                     width: '100%',
-                    maxWidth: '800px',
-                    height: '800px',
+                    maxWidth: '1000px',
+                    height: '700px',
                     margin: '0 auto',
                     borderRadius: '8px',
                     overflow: 'hidden',
                     background: '#fff'
                 }}>
-                    <iframe
-                        src="https://docs.google.com/forms/d/e/1FAIpQLSc73kvyAciRFzgIjMSniiWkTwUpwp19CLQByXOM1fjSGVTgvQ/viewform?embedded=true"
-                        width="100%"
-                        height="100%"
-                        style={{ border: 0 }}
-                        title="Book Now"
-                    >
-                        Loading…
-                    </iframe>
+                    {/* Calendly Inline Widget - Demo */}
+                    <div
+                        className="calendly-inline-widget"
+                        data-url="https://calendly.com/acmesales?hide_gdpr_banner=1"
+                        style={{ minWidth: '320px', height: '700px' }}
+                    />
+                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
                 </div>
 
                 <p style={{ marginTop: '2rem', opacity: 0.7, padding: '1rem' }}>
