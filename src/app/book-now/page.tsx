@@ -18,15 +18,21 @@ export default function BookNowPage() {
                 <div style={{
                     width: '100%',
                     maxWidth: '800px',
-                    height: '600px',
-                    background: 'rgba(255,255,255,0.05)',
+                    height: '800px',
                     margin: '0 auto',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    border: '1px dashed rgba(255,255,255,0.2)'
+                    borderRadius: '8px',
+                    overflow: 'hidden',
+                    background: '#fff'
                 }}>
-                    <p style={{ opacity: 0.5 }}>Booking Form Embed (Client will provide link)</p>
+                    <iframe
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSc73kvyAciRFzgIjMSniiWkTwUpwp19CLQByXOM1fjSGVTgvQ/viewform?embedded=true"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        title="Book Now"
+                    >
+                        Loading…
+                    </iframe>
                 </div>
 
                 <p style={{ marginTop: '2rem', opacity: 0.7, padding: '1rem' }}>

@@ -66,7 +66,7 @@ export default function Collections() {
                             <ul className={styles.features}>
                                 {col.features.map((f, j) => <li key={j} className={styles.feature}>{f}</li>)}
                             </ul>
-                            <a href={col.link} className={styles.button}>
+                            <a href="/book-now" className={styles.button}>
                                 Book Now
                             </a>
                         </div>
